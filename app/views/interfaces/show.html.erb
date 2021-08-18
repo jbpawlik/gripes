@@ -1,0 +1,28 @@
+<div class="showstyle">
+  <h2 id="boardcenter"><%= @board.upcase %></h2>
+
+  <% if @posts.any? %>
+      <div class="overflow-auto" id="boardposts">
+      <% @posts.each do |post| %>
+        <table>
+          <tr>
+            <td>Username: <%= post[0]  %></td>
+          </tr>
+          <tr>
+            <td>Title: <%= post[2]%></td>
+          </tr>
+          <tr>
+            <td colspan="2">Posted: <%= post[3] %></td>
+          </tr>
+          <tr>
+            <td colspan="2">Message: "<%= post[1]%>"</td> 
+          </tr>
+        </table>
+        <br>
+    <% end%>
+      </div>
+    <% else %>
+    <p>No posts have been created yet</p>
+  <% end %>
+
+</div>

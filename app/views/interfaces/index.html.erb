@@ -1,20 +1,25 @@
-<h1>Gripes</h1>
-<h2>The Gateway to Humanity's Peeves</h2>
-
-<h3>Gripe Boards</h3>
-  <% if @boards.any? %>
-    <div class="row">
-    <% @boards.each do |board| %>
-      <div class="col-sm-2 ms-2 me-2 m-2">
-        <div class="card" style="width: 10rem; height: 10rem;">
-          <img src="" class="card-img-top" alt="<%=board[0]%>">
-          <div class="card-body">
-            <a href="/interfaces/<%= board[1] %>" class="btn btn-primary"><%=board[0]%></a>
+<body id="boardIndex">
+  <div class="container">
+    <div id="indexHeader">
+      <h1>Gripes</h1>
+      <h2>The Gateway to Humanity's Peeves</h2>
+    </div>
+  <h3>Gripe Boards</h3>
+    <% if @boards.any? %>
+      <div class="row">
+      <% @boards.each do |board| %>
+        <div class="col-4">
+          <div class="card" id="boardCards" style="background-image: url(<%= "#{Faker::LoremFlickr.image(search_terms: ["#{board[0]}"])}" %>" >
+            <%# <img src="" class="card-img-top" alt="<%=board[0]%>
+            <div class="card-body">
+              <a href="/interfaces/<%= board[1] %>" class="btn btn-primary"><%=board[0]%></a>
+            </div>
           </div>
         </div>
+    <% end%>
       </div>
-  <% end%>
-    </div>
-  <% else %>
-  <p>No boards have been created yet</p>
-<% end %>
+    <% else %>
+    <p>No boards have been created yet</p>
+  <% end %>
+  </div>
+</body>

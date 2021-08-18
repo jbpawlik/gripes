@@ -13,4 +13,47 @@
  *= @import "bootstrap-sprockets";
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+
+
+#boardposts {
+  max-height: 75%;
+  max-width: 75%;
+  height: 75vh;
+  width: 75vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#boardcenter {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#boardIndex {
+  background: image-url('diamonds.jpg');
+}
+
+body {
+  background: linear-gradient(144deg, #85CB33, #EFFFC8, #A5CBC3);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position-y: bottom;
+  min-height: 100vh;
+}
+
+#indexHeader{
+  background-color: rgba(218, 165, 32, 0.7);
+  border-radius: 10px;
+  border: 10px solid rgb(0, 0, 0);
+  text-align: center;
+  margin: 2em;
+}
+
+#boardCards {
+  width: 100%;
+  height: 15em;
+  border: 10px solid rgb(0, 0, 0);
+}
