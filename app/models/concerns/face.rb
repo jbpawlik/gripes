@@ -1,0 +1,3 @@
+class Face < ApplicationRecord
+
+end

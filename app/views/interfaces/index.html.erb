@@ -1,25 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h1>Gripes</h1>
+<h2>The Gateway to Humanity's Peeves</h2>
 
-<h1>Interfaces</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @interfaces.each do |interface| %>
-      <tr>
-        <td><%= link_to 'Show', interface %></td>
-        <td><%= link_to 'Edit', edit_interface_path(interface) %></td>
-        <td><%= link_to 'Destroy', interface, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Interface', new_interface_path %>
+<h3>Gripe Boards</h3>
+  <% if @boards.any? %>
+    <div class="row">
+    <% @boards.each do |board| %>
+      <div class="col-sm-2 ms-2 me-2 m-2">
+        <div class="card" style="width: 10rem; height: 10rem;">
+          <img src="" class="card-img-top" alt="<%=board[0]%>">
+          <div class="card-body">
+            <a href="<%= interface_path(board) %>" class="btn btn-primary"><%=board.name%></a>
+          </div>
+        </div>
+      </div>
+  <% end%>
+    </div>
+  <% else %>
+  <p>No boards have been created yet</p>
+<% end %>
