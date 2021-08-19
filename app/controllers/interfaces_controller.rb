@@ -15,5 +15,4 @@ class InterfacesController < ApplicationController
     @posts = posts.map { |h| [h["title"], h["body"], h["username"], h["updated_at"]] }
     render :show
   end
-
 end

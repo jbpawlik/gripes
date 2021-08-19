@@ -9,14 +9,17 @@
             <td>Username: <%= post[0]  %></td>
           </tr>
           <tr>
-            <td>Title: <%= post[2]%></td>
+            <td>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapsed<%= post %>" role="button" aria-expanded="false" aria-controls="collapseExample">Title: <%= post[2]%></a></td>
           </tr>
-          <tr>
-            <td colspan="2">Posted: <%= post[3] %></td>
-          </tr>
-          <tr>
-            <td colspan="2">Message: "<%= post[1]%>"</td> 
-          </tr>
+          <div id="collapsed<%= post %>">
+            <tr>
+              <td colspan="2">Posted: <%= post[3] %></td>
+            </tr>
+            <tr>
+              <td colspan="2">Message: "<%= post[1]%>"</td> 
+            </tr>
+          </div>
         </table>
         <br>
     <% end%>
